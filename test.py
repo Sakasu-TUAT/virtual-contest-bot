@@ -20,7 +20,3 @@ def tweet(message):
     )
     client.create_tweet(text = message)
 
-browser = webdriver.Chrome()
-contest_url = 'https://kenkoooo.com/atcoder/#/contest/recent'
-
-# tweet(f"contest url : {contest_url}")
