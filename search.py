@@ -52,13 +52,17 @@ for element in elements:
             notable_contest.add((title, start.text, end.text, contest_url))
 
 try :
-    print(notable_contest)
-    [title, start, end, contest_url] = notable_contest.pop()
-
-    # tweet(f"test: コンテストのお知らせ -> {title} {contest_url}\
-    # ※これはAPIを使った自動ツイートです\
-    # #AtCoderProblems")
+    # タプルごとに改行して出力する
+    for contest in notable_contest:
+        print(contest)
+    while len(notable_contest) > 1:
+        [title, start, end, contest_url] = notable_contest.pop()
+        notable_contest.pop()
 except :
     print("error")
+
+tweet(f"test: コンテストのお知らせ -> {title} {contest_url}\
+※これはAPIを使った自動ツイートです\
+#AtCoderProblems")
 
 browser.quit()

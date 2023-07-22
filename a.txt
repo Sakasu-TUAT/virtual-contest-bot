@@ -1,8 +1,0 @@
-Today's date: 2023-07-20
-error
-error
-error
-error
-error
-error
-{('緑への道!!', '2023-07-21 06:30:00 (Fri)', '2023-07-21 07:30:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/4d9aad78-c85a-40f3-a7ee-80a0582f7c0d'), ('🌙🍘ARCなにか(Cまで)!', '2023-07-19 22:00:00 (Wed)', '2023-07-19 22:55:00 (Wed)', 'https://kenkoooo.com/atcoder/#/contest/show/0b5be2e6-aed2-4ed6-bf11-41581390ffc5'), ('緑への道!!', '2023-07-20 06:30:00 (Thu)', '2023-07-20 07:30:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/776ee3bb-996b-472d-a2d8-15001b5c915d'), ('☀️🍰ABCなにか(Dまで)!', '2023-07-20 14:00:00 (Thu)', '2023-07-20 14:35:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/52515e18-89d8-4db8-94fb-bad95cb71145'), ('ABC 俺diff 3問', '2023-07-20 20:50:00 (Thu)', '2023-07-20 21:20:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/2d4ba316-4f73-4505-be2c-7f5354c74f80'), ('まよコン', '2023-07-19 21:00:00 (Wed)', '2023-07-19 22:40:00 (Wed)', 'https://kenkoooo.com/atcoder/#/contest/show/0a34a3e3-d6ca-4ec5-b481-9f758345c37c'), ('🌙🍰ABCなにか(Dまで)!', '2023-07-19 21:00:00 (Wed)', '2023-07-19 21:35:00 (Wed)', 'https://kenkoooo.com/atcoder/#/contest/show/de7fb9ca-50b9-4202-a9c8-96f9ce54c31f'), ('まよコン', '2023-07-20 21:00:00 (Thu)', '2023-07-20 22:40:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/182a2192-3500-48a8-8814-ba178a8e39e6'), ('🌙🍰ABCなにか(Dまで)!', '2023-07-20 21:00:00 (Thu)', '2023-07-20 21:35:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/7bb131e5-8258-4e70-a97e-98c3a3eb1c8e'), ('ABCのDP集 (水まで)', '2023-06-21 18:15:00 (Wed)', '2023-07-21 23:55:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/4127db8d-be74-41d6-b516-48dee95d963e')}
