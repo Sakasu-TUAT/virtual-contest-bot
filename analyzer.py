@@ -20,8 +20,8 @@ virtual_contests_url = 'https://kenkoooo.com/atcoder/#/contest/recent/'
 browser.get(virtual_contests_url)
 elements = browser.find_elements(By.TAG_NAME, "*")
 
-pattern = r"(TUAT|ABC|ARC|AGC)"
-pattern = re.compile(r"(TUAT|ABC)", re.IGNORECASE)
+# pattern = r"(TUAT|ABC|ARC|AGC)"
+# pattern = re.compile(r"(TUAT|ABC)", re.IGNORECASE)
 notable_contest = set()
 
 def getContestState(start, end):
@@ -56,6 +56,8 @@ for element in elements:
     soup = BeautifulSoup(innerHTML, "html.parser")
     tr = soup.find_all("tr")
 
+    url = ""
+    title = ""
     for t in tr:
         a = t.find("a")
         if a:
@@ -66,9 +68,9 @@ for element in elements:
 
         text = t.getText()
 
-        if re.search(pattern, text):
-            contest_url = 'https://kenkoooo.com/atcoder/'+url
-            notable_contest.add((title, start.text, end.text, contest_url))
+        # if re.search(pattern, text):
+        contest_url = 'https://kenkoooo.com/atcoder/'+url
+        notable_contest.add((title, start.text, end.text, contest_url))
         
 try :
     for contest in notable_contest:
@@ -84,8 +86,11 @@ except :
     print("search error")
 
 for [state, con] in Contests.items():
-    if state in (State.RECENT, State.RUNNING) : continue
-    con.executeTweet()
+    if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
+    try :
+        con.executeTweet()
+    except :
+        print("tweet error")
 
 
 browser.quit()

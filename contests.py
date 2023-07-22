@@ -54,7 +54,7 @@ class FinishedContest(BaseContest):
 
 class UpcomingFutureContest(BaseContest):
     def executeTweet(self):
-        self.tweetContest("【 来るべきバチャ 】")
+        self.tweetContest("【 明日以降のバチャ 】")
 
 class RunningContest(BaseContest):
     def executeTweet(self):
