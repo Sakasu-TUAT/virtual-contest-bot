@@ -21,8 +21,8 @@ def tweet(message):
     )
     client.create_tweet(text = message)
 
-# driver_path = '/app/.chromedriver/bin/chromedriver'
-driver_path = '/usr/local/bin/chromedriver'
+driver_path = '/app/.chromedriver/bin/chromedriver'
+# driver_path = '/usr/local/bin/chromedriver'
 service = Service(driver_path)
 
 options = webdriver.ChromeOptions()
