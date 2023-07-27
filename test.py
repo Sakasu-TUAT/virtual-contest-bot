@@ -33,6 +33,3 @@ options.add_argument('--remote-debugging-port=9222')
 browser = webdriver.Chrome(options=options, service=service)
 # browser = webdriver.Chrome(options=options)
 contest_url = 'https://kenkoooo.com/atcoder/#/contest/recent'
-
-# print("test")
-tweet(f"deploy test on Heroku : {contest_url}")
