@@ -1,0 +1,10 @@
+Today's date: 2023-07-28
+('「超ABC」001', '2023-07-27 19:30:00 (Thu)', '2023-07-27 22:30:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/034aa78f-b9d0-4e0b-aed7-07088132d4b2')
+('🌙🍰ABCなにか(Dまで)!', '2023-07-27 21:00:00 (Thu)', '2023-07-27 21:35:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/b3609d5d-21a5-4952-bf0f-14fb0e96c5b0')
+('🌙🍰ABCなにか(Dまで)!', '2023-07-28 21:00:00 (Fri)', '2023-07-28 21:35:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/16d61866-1d59-4f1f-96a7-bd4fc7b1aea6')
+('緑への道!!', '2023-07-29 06:30:00 (Sat)', '2023-07-29 07:30:00 (Sat)', 'https://kenkoooo.com/atcoder/#/contest/show/7c130c6b-750a-4938-bbde-7aa27ff722c5')
+('まよコン', '2023-07-27 21:00:00 (Thu)', '2023-07-27 22:40:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/228ecd2e-6377-485b-872b-fff99cc5e3fa')
+('☀️🍰ABCなにか(Dまで)!', '2023-07-28 14:00:00 (Fri)', '2023-07-28 14:35:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/3b698465-7678-42ea-a99b-56a80d6cb354')
+('緑への道!!', '2023-07-28 05:30:00 (Fri)', '2023-07-28 06:30:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/779dc4f2-88b6-4256-8d81-e934a570148c')
+('水めざすコミュ用バチャ（ABC灰茶緑水）#376', '2023-07-27 20:00:00 (Thu)', '2023-07-27 20:30:00 (Thu)', 'https://kenkoooo.com/atcoder/#/contest/show/d8afd62c-7b65-4c33-a978-70730215d41f')
+('まよコン', '2023-07-28 21:00:00 (Fri)', '2023-07-28 22:40:00 (Fri)', 'https://kenkoooo.com/atcoder/#/contest/show/78456515-fc63-4c76-89ed-436c4f6d7510')

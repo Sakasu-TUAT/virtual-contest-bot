@@ -2,9 +2,9 @@ from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time 
 import os
 import tweepy
+from selenium.webdriver.chrome.service import Service
 
 # .envファイルのパスを指定して読み込み
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
@@ -20,7 +20,19 @@ def tweet(message):
     )
     client.create_tweet(text = message)
 
-browser = webdriver.Chrome()
+driver_path = '/app/.chromedriver/bin/chromedriver'
+# driver_path = '/usr/local/bin/chromedriver'
+service = Service(driver_path)
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--remote-debugging-port=9222')
+browser = webdriver.Chrome(options=options, service=service)
+# browser = webdriver.Chrome(options=options)
 contest_url = 'https://kenkoooo.com/atcoder/#/contest/recent'
 
-# tweet(f"contest url : {contest_url}")
+# print("test")
+tweet(f"deploy test on Heroku : {contest_url}")

@@ -63,6 +63,8 @@ for element in elements:
         if a:
             url = a.get("href")
             title = a.getText().replace("Public ", "")
+        else:
+            continue
         if(len(t.find_all("div")) < 3) : continue    
         [mode, start, end, *remains] = t.find_all("div")
 
@@ -86,7 +88,9 @@ except :
     print("search error")
 
 for [state, con] in Contests.items():
-    if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
+    # if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
+    # if state is not State.UPCOMING_TODAY : continue
+    if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
     try :
         con.executeTweet()
     except :
