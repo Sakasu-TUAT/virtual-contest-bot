@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time 
 import os
 import tweepy
 from selenium.webdriver.chrome.service import Service
