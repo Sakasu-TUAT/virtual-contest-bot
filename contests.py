@@ -1,8 +1,6 @@
 from enum import Enum
 from abc import ABC, abstractmethod
 from test import tweet
-from datetime import datetime
-from dateutil.parser import parse
 
 import time 
 
@@ -37,9 +35,7 @@ class BaseContest(ABC):
                     +title+"\n"+         \
                     "□━━━━━━━━━━━━━━━━■\n"\
                     + "・" + start + "~" + end + "\n・"+contest_url + "\n"
-            print(start, end, text)
-
-            
+            print(text)
             tweet(f"{header}\n{text}\n#AtCoderProblems")
             time.sleep(10)
             

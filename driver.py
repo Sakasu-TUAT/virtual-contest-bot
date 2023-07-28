@@ -16,12 +16,11 @@ def scraping():
     driver.quit()
     return line
 
-
-
 def setting_chrome_options():
 
     driverPath = "/bin" + "/chromedriver"
     headlessPath = "/bin" + "/headless-chromium"
+
 
     # chrome_options = webdriver.ChromeOptions()
     chrome_options = Options()
