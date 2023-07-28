@@ -3,45 +3,39 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
-def scraping():
-    # ドライバーセッティング
-    driver = webdriver.Chrome(
-        options=setting_chrome_options()
-    )
+class Scraper:
+
+    def __init__(self):
+        # ドライバーセッティング
+        self.driver = webdriver.Chrome(
+            options=self.settingChromeOptions(),
+            service=Service('/usr/local/bin/chromedriver')
+        )
+
+    def scraping(self):
+        virtual_contests_url = 'https://kenkoooo.com/atcoder/#/contest/recent/'
+        self.driver.get(virtual_contests_url)
+        elements = self.driver.find_elements(By.TAG_NAME, "*")
+        return elements
     
-    driver.get('https://en.wikipedia.org/wiki/Special:Random')
-    line = driver.find_element(By.CLASS_NAME, 'biography').text 
-    print(line)
-    driver.quit()
-    return line
+    def quit(self):
+        self.driver.quit()
 
-def setting_chrome_options():
+    @classmethod
+    def settingChromeOptions(cls):
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--hide-scrollbars")
+        chrome_options.add_argument("--enable-logging")
+        chrome_options.add_argument("--log-level=0")
+        chrome_options.add_argument("--v=99")
+        chrome_options.add_argument("--single-process")
+        chrome_options.add_argument("--ignore-certificate-errors")
+        chrome_options.add_argument("--disable-dev-shm-usage")
 
-    driverPath = "/bin" + "/chromedriver"
-    headlessPath = "/bin" + "/headless-chromium"
-
-
-    # chrome_options = webdriver.ChromeOptions()
-    chrome_options = Options()
-
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--hide-scrollbars")
-    chrome_options.add_argument("--enable-logging")
-    chrome_options.add_argument("--log-level=0")
-    chrome_options.add_argument("--v=99")
-    chrome_options.add_argument("--single-process")
-    chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-
-    chrome_options.binary_location = os.getcwd() + headlessPath
-    # chrome_options.binary_location = os.getcwd() + driverPath
-
-    print("get driver")
-    return chrome_options
-
-
-if __name__ == "__main__":
-    scraping()
+        print("get driver")
+        return chrome_options

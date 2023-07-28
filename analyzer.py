@@ -8,18 +8,14 @@ from datetime import datetime, timedelta
 import re
 from enum import Enum
 from contests import State, Contests
+from driver import Scraper
 
 today = datetime.today()
 print("Today's date:", today)
+scraper = Scraper()
+elements = scraper.scraping()
 
-options = Options()
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-options.add_argument("--headless")
-browser = webdriver.Chrome(options=options)
-virtual_contests_url = 'https://kenkoooo.com/atcoder/#/contest/recent/'
-browser.get(virtual_contests_url)
-elements = browser.find_elements(By.TAG_NAME, "*")
-
+print(elements[0].text)
 # pattern = r"(TUAT|ABC|ARC|AGC)"
 # pattern = re.compile(r"(TUAT|ABC)", re.IGNORECASE)
 notable_contest = set()
@@ -44,11 +40,12 @@ def getContestState(start, end):
     
 st = set()
 for element in elements:  
+    innerHTML = ""
     if element is None: continue
     try:
         innerHTML = element.get_attribute("outerHTML")
-    except:
-        print("error")        
+    except Exception as e:
+        print("tweet error:", e)   
 
     if st.__contains__(innerHTML) : continue
     if innerHTML is None: continue
@@ -84,6 +81,7 @@ try :
     while len(notable_contest) > 1:
         [title, start, end, contest_url] = notable_contest.pop()
         notable_contest.pop()
+
 except :
     print("search error")
 
@@ -93,11 +91,8 @@ for [state, con] in Contests.items():
     # if state is not State.UPCOMING_TODAY : continue
     
     if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
-    try :
-        con.executeTweet()
-        # pass
-    except :
-        print("tweet error")
+    try: con.executeTweet() 
+    except Exception as e: 
+        print("tweet error:", e)
 
-
-browser.quit()
+scraper.quit()

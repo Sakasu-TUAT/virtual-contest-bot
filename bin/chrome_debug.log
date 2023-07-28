@@ -1,0 +1,31 @@
+[0728/175443.043128:WARNING:resource_bundle.cc(368)] locale_file_path.empty() for locale 
+[0728/175443.065862:WARNING:resource_bundle.cc(368)] locale_file_path.empty() for locale 
+[0728/175443.075857:VERBOSE1:zygote_main_linux.cc(601)] ZygoteMain: initializing 0 fork delegates
+[0728/175443.082186:INFO:cpu_info.cc(50)] Available number of cores: 16
+[0728/175443.146665:ERROR:instance.cc(49)] Unable to locate service manifest for metrics
+[0728/175443.146717:ERROR:service_manager.cc(890)] Failed to resolve service name: metrics
+[0728/175443.151209:ERROR:gpu_process_transport_factory.cc(1009)] Lost UI shared context.
+[0728/175443.188759:VERBOSE1:webrtc_internals.cc(109)] Could not get the download directory.
+[0728/175443.230517:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Google 'Aviator' log
+[0728/175443.230591:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Google 'Icarus' log
+[0728/175443.230614:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Google 'Pilot' log
+[0728/175443.230616:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Google 'Rocketeer' log
+[0728/175443.230620:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Google 'Skydiver' log
+[0728/175443.230623:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: DigiCert Log Server
+[0728/175443.230625:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: DigiCert Log Server 2
+[0728/175443.230628:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Symantec log
+[0728/175443.230631:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Symantec 'Vega' log
+[0728/175443.230633:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Symantec 'Sirius' log
+[0728/175443.230636:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: WoSign log
+[0728/175443.230639:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Venafi Gen2 CT log
+[0728/175443.230641:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: CNNIC CT log
+[0728/175443.230644:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: StartCom log
+[0728/175443.230646:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Comodo 'Sabre' CT log
+[0728/175443.230654:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Comodo 'Mammoth' CT log
+[0728/175443.230657:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Izenpe log
+[0728/175443.230659:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Venafi log
+[0728/175443.230662:VERBOSE1:multi_log_ct_verifier.cc(75)] Adding CT log: Certly.IO log
+[0728/175443.232558:VERBOSE1:proxy_service.cc(958)] PAC support disabled because there is no system implementation
+[0728/175443.316173:ERROR:gl_implementation.cc(292)] Failed to load /home/sakasu/dev/bot/bin/libosmesa.so: /home/sakasu/dev/bot/bin/libosmesa.so: cannot open shared object file: No such file or directory
+[0728/175443.321058:VERBOSE1:gpu_init.cc(307)] gl::init::InitializeGLNoExtensionsOneOff failed
+[0728/175443.464454:WARNING:histograms.cc(40)] Started multiple compositor clients (Browser, Renderer) in one process. Some metrics will be disabled.
