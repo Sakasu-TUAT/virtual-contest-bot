@@ -1,6 +1,7 @@
 from enum import Enum
 from abc import ABC, abstractmethod
 from test import tweet
+
 import time 
 
 class State(Enum):
@@ -27,9 +28,15 @@ class BaseContest(ABC):
 
     def tweetContest(self, header): 
         for i in self.__contests:
-            [title, start, end, contest_url] = i
-            text = title + " " + start + "~" + end + contest_url + "\n"
-            tweet(f"{header}\n{text}#AtCoderProblems")
+            [title, start_row, end_row, contest_url] = i
+            start = start_row.replace("2023-", "")
+            end = end_row.replace("2023-", "")
+            text = "■━━━━━━━━━━━━━━━━□\n "\
+                    +title+"\n"+         \
+                    "□━━━━━━━━━━━━━━━━■\n"\
+                    + "・" + start + "~" + end + "\n・"+contest_url + "\n"
+            print(text)
+            tweet(f"{header}\n{text}\n#AtCoderProblems")
             time.sleep(10)
             
     @abstractmethod
