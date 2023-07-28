@@ -21,9 +21,9 @@ def tweet(message):
     client.create_tweet(text = message)
 
 
-driver_path = '/app/.chromedriver/bin/chromedriver' #heroku用
-# driver_path = '/usr/local/bin/chromedriver' #ローカル用
-service = Service(driver_path
+# driver_path = '/app/.chromedriver/bin/chromedriver' #heroku用
+driver_path = '/usr/local/bin/chromedriver' #ローカル用
+service = Service(driver_path)
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -34,3 +34,4 @@ options.add_argument('--remote-debugging-port=9222')
 browser = webdriver.Chrome(options=options, service=service)
 # browser = webdriver.Chrome(options=options) #ローカル用
 contest_url = 'https://kenkoooo.com/atcoder/#/contest/recent'
+
