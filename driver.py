@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+import logging
 
 
 class Scraper:
@@ -15,8 +15,8 @@ class Scraper:
         # ドライバーセッティング
         self.driver = webdriver.Chrome(
             options=self.settingChromeOptions(),
-            # service=Service('/usr/local/bin/chromedriver')
-            service=Service('/app/.chromedriver/bin/chromedriver')
+            # service=Service('/usr/local/bin/chromedriver') # for local
+            service=Service('/app/.chromedriver/bin/chromedriver') # for heroku
         )    
 
     def scraping(self):

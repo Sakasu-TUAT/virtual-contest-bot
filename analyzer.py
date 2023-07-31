@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
@@ -17,10 +18,10 @@ print("Today's date in JST:", today)
 scraper = Scraper()
 elements = scraper.scraping()
 
-print(elements[0].text)
+notable_contest = set()
 # pattern = r"(TUAT|ABC|ARC|AGC)"
 # pattern = re.compile(r"(TUAT|ABC)", re.IGNORECASE)
-notable_contest = set()
+
 
 def getContestState(start, end):
     s = datetime.strptime(start, '%Y-%m-%d %H:%M:%S (%a)')
@@ -28,7 +29,11 @@ def getContestState(start, end):
     now = datetime.now()
     # print(now, ": [", s, ", ", e, "]")
     if timedelta(minutes=0) <= s - now <= timedelta(minutes=10):
-        return State.START_ALARM
+        return State.START_ALARM_TEN_MINUTES
+    if timedelta(minutes=10) <= s - now <= timedelta(minutes=30):
+        return State.START_ALARM_THIRTY_MINUTES
+    if timedelta(minutes=30) <= s - now <= timedelta(minutes=60):
+        return State.START_ALARM_AN_HOUR
     elif timedelta(minutes=0) <= now - e <= timedelta(minutes=10):
         return State.END_ALARM
     elif s > now and s.day == now.day:
@@ -42,12 +47,16 @@ def getContestState(start, end):
     
 st = set()
 for element in elements:  
-    innerHTML = ""
     if element is None: continue
+    innerHTML = ""
     try:
         innerHTML = element.get_attribute("outerHTML")
+    except NoSuchElementException as e:
+        print("tweet error: Element not found -", e)
+        continue
     except Exception as e:
-        print("tweet error:", e)   
+        print("tweet error:", e)
+        continue
 
     if st.__contains__(innerHTML) : continue
     if innerHTML is None: continue
@@ -88,10 +97,11 @@ for [state, con] in Contests.items():
     # if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
     # if state is not State.UPCOMING_TODAY : continue
     # if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
-    if state not in (State.START_ALARM, State.UPCOMING_TODAY) : continue
+    if state not in (State.START_ALARM_AN_HOUR, State.START_ALARM_TEN_MINUTES, State.START_ALARM_THIRTY_MINUTES, State.UPCOMING_TODAY) : continue
     try: con.executeTweet() 
     except Exception as e: 
         print("tweet error:", e)
+
     
 
 scraper.quit()
