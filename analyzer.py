@@ -94,10 +94,7 @@ except Exception as e:
 
 cnt = 0
 for [state, con] in Contests.items():
-    # if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
-    # if state is not State.UPCOMING_TODAY : continue
-    # if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
-    if state not in (State.START_ALARM_AN_HOUR, State.START_ALARM_TEN_MINUTES, State.START_ALARM_THIRTY_MINUTES, State.UPCOMING_TODAY) : continue
+    if state not in (State.START_ALARM_TEN_MINUTES, State.START_ALARM_THIRTY_MINUTES, State.START_ALARM_AN_HOUR) : continue
     try: con.executeTweet() 
     except Exception as e: 
         print("tweet error:", e)
