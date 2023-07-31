@@ -6,12 +6,14 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import re
+import pytz # UTC -> JST
 from enum import Enum
 from contests import State, Contests
 from driver import Scraper
 
-today = datetime.today()
-print("Today's date:", today)
+jst = pytz.timezone('Asia/Tokyo')
+today = datetime.now(jst)
+print("Today's date in JST:", today)
 scraper = Scraper()
 elements = scraper.scraping()
 
@@ -78,21 +80,18 @@ try :
         targetContest = Contests[res]
         targetContest.add_contest(contest)
 
-    while len(notable_contest) > 1:
-        [title, start, end, contest_url] = notable_contest.pop()
-        notable_contest.pop()
-
-except :
-    print("search error")
+except Exception as e:
+    print("search error", e)
 
 cnt = 0
 for [state, con] in Contests.items():
     # if state in (State.RECENT, State.RUNNING, State.UPCOMING_FUTURE) : continue
     # if state is not State.UPCOMING_TODAY : continue
-    
-    if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
+    # if state not in (State.START_ALARM, State.END_ALARM, State.UPCOMING_TODAY) : continue
+    if state not in (State.START_ALARM, State.UPCOMING_TODAY) : continue
     try: con.executeTweet() 
     except Exception as e: 
         print("tweet error:", e)
+    
 
 scraper.quit()

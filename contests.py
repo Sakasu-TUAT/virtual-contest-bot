@@ -36,8 +36,8 @@ class BaseContest(ABC):
                     "□━━━━━━━━━━━━━━━━■\n"\
                     + "・" + start + "~" + end + "\n・"+contest_url + "\n"
             print(text)
+            time.sleep(20)
             tweet(f"{header}\n{text}\n#AtCoderProblems")
-            time.sleep(10)
             
     @abstractmethod
     def executeTweet(self):
